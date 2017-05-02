@@ -1,9 +1,11 @@
 {
   "id": 2,
-  "title": "Three widgets card",
-  "slug": "three-widgets-card",
+  "title": "Issue Data Table",
+  "slug": "issue-data-table",
   "attributes": {
-    "elementHref": "/elements/three-widgets-card/three-widgets-card.html"
+    "elementHref": "/elements/data-table-card/data-table-card.html",
+    "dataUrl": "/api/time-series/datagrid/1",
+    "headerText": "Issue Data Table"
   },
   "createTimeStamp": "2015-11-24T23:02:53.816Z",
   "tags": []

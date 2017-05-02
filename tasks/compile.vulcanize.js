@@ -11,7 +11,8 @@ module.exports = function(gulp) {
     return gulp.src([
       'public/elements/seed-app/seed-app.html',
       'public/elements/views/dashboards-view.html',
-      'public/elements/views/blankpage-view.html'
+      'public/elements/views/blankpage-view.html',
+        'public/elements/views/kpi-view.html'
       ], { base: 'public/elements/' })
       .pipe(vulcanize({
         abspath: '',

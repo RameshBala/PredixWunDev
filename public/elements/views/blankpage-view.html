@@ -1,20 +1,396 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/px-sample-cards/blank-card.html">
 <link rel="import" href="../../bower_components/px-view-header/px-view-header.html">
+<link rel="stylesheet" type="text/css" href="blankpage.css">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/flip-card/flip-card.html">
+<link rel="import" href="../../bower_components/px-progress-bar/px-progress-bar.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/px-spinner/px-spinner.html">
+
 <dom-module id="blankpage-view">
   <template>
-    <px-view-header title="Blank Page" style="display: block; margin-bottom: 6px;"></px-view-header>
-    <blank-card id="myCard">
-      An example of a blank card without any content (except for this brief description).  Replace this with the actual content for your application.
-    </blank-card>
+
+    <iron-ajax
+    auto
+    url="public\elements\views\cust.json"
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"
+    last-response="{{data}}">
+    </iron-ajax>
+
+    <px-view-header title="PCC" style="display: block; margin-bottom: 6px;"></px-view-header>
+      <div class="col-md-1 flex-container">
+        <div class="flex-item">
+          <div class="flex-item-inner">
+            <div class="card-front bg-green">
+            <h4> <b>VTX S-1</b> </h4>
+          <span>{{data.cust1.Name}}</span>
+            <px-progress-bar  value="50" striped="true" animated="true"></px-progress-bar><br/>
+            <span class="sphere red"></span><span class="sphere green"></span>
+
+            </div>
+            <div class="card-back bg-green">
+              <p>FC Start:{{data.cust1.fcstart}}</p>
+              <p>FC End: {{data.cust1.fcend}}</p>
+              <p>XR Start:{{data.cust1.xrstart}}</p>
+              <p>XR End:{{data.cust1.xrend}}</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="flex-item-inner">
+            <div class="card-front bg-green">
+            <h4> <b>VTX S -2</b> </h4>
+            <p>Customer:Cairnhill</p>
+
+            <px-progress-bar  value="0" striped="true" animated="true"></px-progress-bar><br>
+              <span class="sphere red"></span><span class="sphere green"></span>
+            </div>
+            <div class="card-back bg-green">
+              <p>FC Start:</p>
+              <p>FC End:</p>
+              <p>XR Start:</p>
+              <p>XR End:</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="flex-item-inner">
+            <div class="card-front bg-green">
+            <h4> <b>NNTM</b> </h4>
+            <p>Customer: Apple</p>
+
+            <px-progress-bar  value="38" striped="true" animated="true"></px-progress-bar><br>
+              <span class="sphere red"></span><span class="sphere green"></span>
+            </div>
+            <div class="card-back bg-green">
+              <p>FC Start: 13.03.2017</p>
+              <p>FC End: 24.03.2017</p>
+              <p>XR Start: n/a </p>
+              <p>XR End: n/a </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="flex-item-inner">
+            <div class="card-front bg-green">
+            <h4> <b>Optional Space</b> </h4>
+            <p>Customer:</p>
+
+            <px-progress-bar  value="40" striped="true" animated="true"></px-progress-bar><br>
+              <span class="sphere red"></span><span class="sphere green"></span>
+            </div>
+            <div class="card-back bg-green">
+              <p>FC Start:</p>
+              <p>FC End:</p>
+              <p>XR Start:</p>
+              <p>XR End:</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 flex-container ">
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>VTX S -3</b> </h4>
+              <p>Customer:Align Tec</p>
+
+              <px-progress-bar  value="80" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start: 17.03.2017</p>
+                <p>FC End: n/a </p>
+                <p>XR Start: n/a </p>
+                <p>XR End: 13.04.2017</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>VTX S -4</b> </h4>
+              <p>Customer: Forecast</p>
+
+              <px-progress-bar  value="0" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start:</p>
+                <p>FC End:</p>
+                <p>XR Start:</p>
+                <p>XR End:</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>NNTM</b> </h4>
+              <p>Customer:Apple</p>
+
+              <px-progress-bar  value="15" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start:</p>
+                <p>FC End:</p>
+                <p>XR Start:</p>
+                <p>XR End:</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>Optional Space</b> </h4>
+              <p>Customer:</p>
+
+              <px-progress-bar  value="80" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start:</p>
+                <p>FC End:</p>
+                <p>XR Start:</p>
+                <p>XR End:</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>VTX C -1</b> </h4>
+              <p>Customer: Demo Singapur</p>
+
+              <px-progress-bar  value="90" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start: 27.02.2017</p>
+                <p>FC End: 06.03.2017</p>
+                <p>XR Start: 22.03.2017</p>
+                <p>XR End: 25.04.2017</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>VTX C -2 </b> </h4>
+              <p>Customer: GE Japan</p>
+
+              <px-progress-bar  value="95" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start: 14.03.2017</p>
+                <p>FC End: 31.03.2017</p>
+                <p>XR Start: 27.07.2017</p>
+                <p>XR End: 19.04.2017</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>VTX C -3</b> </h4>
+              <p>Customer: Forecast </p>
+
+              <px-progress-bar  value="40" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start: 20.04.2017</p>
+                <p>FC End:</p>
+                <p>XR Start:</p>
+                <p>XR End:</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-item-inner">
+              <div class="card-front bg-green">
+              <h4> <b>VTX C -4</b> </h4>
+              <p>Customer: Safran</p>
+
+              <px-progress-bar  value="15" striped="true" animated="true"></px-progress-bar><br>
+                <span class="sphere red"></span><span class="sphere green"></span>
+              </div>
+              <div class="card-back bg-green">
+                <p>FC Start:</p>
+                <p>FC End:</p>
+                <p>XR Start:</p>
+                <p>XR End:</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="col-md-1 flex-container">
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -1</b> </h4>
+                <p>Customer: Samsung</p>
+
+                <px-progress-bar  value="35" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start: 20.03.2017</p>
+                  <p>FC End: 06.04.2017</p>
+                  <p>XR Start: 04.04.2017</p>
+                  <p>XR End: 23.05.2017</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -2</b> </h4>
+                <p>Customer: Smithsonian</p>
+
+                <px-progress-bar  value="45" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start: 16.03.2017</p>
+                  <p>FC End: 03.04.2017</p>
+                  <p>XR Start: 04.04.2017</p>
+                  <p>XR End: 21.04.2017</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -3</b> </h4>
+                <p>Customer: Hirschmann </p>
+
+                <px-progress-bar  value="10" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start: 07.04.2017</p>
+                  <p>FC End:n/a</p>
+                  <p>XR Start:n/a</p>
+                  <p>XR End: 30.05.2017</p>
+                </div>
+              </div>
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -4</b> </h4>
+                <p>Customer: Demo GE</p>
+
+                <px-progress-bar  value="30" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start:13.02.2017</p>
+                  <p>FC End: 02.03.2017</p>
+                  <p>XR Start:22.02.2017</p>
+                  <p>XR End:21.03.2017</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-1 flex-container">
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -5</b> </h4>
+                <p>Customer: GE Japan</p>
+
+                <px-progress-bar  value="15" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start: 14.03.2017</p>
+                  <p>FC End: 31.03.2017</p>
+                  <p>XR Start: 27.03.2017</p>
+                  <p>XR End: 19.04.2017</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -6</b> </h4>
+                <p>Customer: Hyundai</p>
+
+                <px-progress-bar  value="90" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start: 08.03.2017</p>
+                  <p>FC End: 27.03.2017</p>
+                  <p>XR Start: 27.03.2017</p>
+                  <p>XR End: 11.04.2017</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M -7 (METR)</b> </h4>
+                <p>Customer: GE Power</p>
+
+                <px-progress-bar  value="0" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start: </p>
+                  <p>FC End:</p>
+                  <p>XR Start:</p>
+                  <p>XR End:</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-item-inner">
+                <div class="card-front bg-green">
+                <h4> <b>VTX M - (METR)</b> </h4>
+                <p>Customer: Forecast</p>
+
+                <px-progress-bar  value="70" striped="true" animated="true"></px-progress-bar><br>
+                  <span class="sphere red"></span><span class="sphere green"></span>
+                </div>
+                <div class="card-back bg-green">
+                  <p>FC Start:</p>
+                  <p>FC End:</p>
+                  <p>XR Start:</p>
+                  <p>XR End:</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+    
   </template>
-  <script>
-    Polymer({
-      is: 'blankpage-view',
-      properties: {},
-      ready: function() {
-        console.log('blankpage-view ready()')
-      }
-    });
-  </script>
+
 </dom-module>
+<script>
+  Polymer({
+    is: 'blankpage-view',
+
+    properties: {
+        customer1: String,
+        data: Object
+
+      },
+
+    handleResponse: function(){
+      console.log("Data received from json");
+    }
+    });
+</script>

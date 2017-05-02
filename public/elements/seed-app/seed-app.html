@@ -14,6 +14,8 @@
 
 <link rel="import" href="../ge-svg-logo/ge-svg-logo.html">
 <link rel="import" href="../predix-logo/predix-logo.html">
+
+
 <link rel="import" href="../seed-footer/seed-footer.html">
 
 <dom-module id="seed-app">
@@ -24,7 +26,7 @@
 
     <header role="banner" class="flex flex--middle">
       <div class="viewport flex">
-        <h3 class="flex__item app-title"><ge-svg-logo class="u-mr--"></ge-svg-logo> Seed Application</h3>
+        <h3 class="flex__item app-title"><ge-svg-logo class="u-mr--"></ge-svg-logo> GE Sensing and Inspection GmbH, Wunstorf</h3>
         <div class="flex__item">
           <div class="flex" style="text-align:right;">
             <h3 class="flex__item weight--normal logo">Powered by <predix-logo style="display:inline-block; width: 82px;" class="flex__item"></predix-logo></h3>
@@ -51,6 +53,17 @@
             use-hash-as-path>
           </app-location>
 
+          <!-- /blankpage route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/blankpage"
+            active="{{_blankpageActive}}">
+          </app-route>
+          <px-view
+            active="[[_blankpageActive]]"
+            element-href="/elements/views/blankpage-view.html">
+          </px-view>
+
           <!-- /dashboards route and view -->
           <app-route
             route="[[_route]]"
@@ -63,18 +76,9 @@
             element-href="/elements/views/dashboards-view.html">
           </px-view>
 
-          <!-- /blankpage route and view -->
-          <app-route
-            route="[[_route]]"
-            pattern="/blankpage"
-            active="{{_blankpageActive}}">
-          </app-route>
-          <px-view
-            active="[[_blankpageActive]]"
-            element-href="/elements/views/blankpage-view.html">
-          </px-view>
 
-          <!-- /winddata route and view -->
+
+          <!-- /winddata route and view
           <app-route
             route="[[_route]]"
             pattern="/winddata"
@@ -85,7 +89,7 @@
             element-href="/elements/views/winddata-view.html">
           </px-view>
 
-          <!-- /simple-asset route and view -->
+          simple-asset route and view
           <app-route
             route="[[_route]]"
             pattern="/simple-asset"
@@ -94,7 +98,7 @@
           <px-view
             active="[[_simple-assetActive]]"
             element-href="/elements/views/simple-asset-view.html">
-          </px-view>
+          </px-view>-->
 
         </main>
 
@@ -121,7 +125,7 @@
           value: function() {
             return {
               version: '1.0',
-              name: 'Predix UI Seed',
+              name: 'Predix - GE Wunstorf',
               session: {}
             }
           }
@@ -130,15 +134,24 @@
         navItems: {
           type: Array,
           value: function() {
-            return [{
+            return [
+              {
+                "label": "Overview",
+                "path": "/blankpage",
+                "icon": "fa-desktop"
+              },
+
+              {
               "label": "Dashboards",
               "path": "/dashboards",
               "icon": "fa-tachometer"
-            }, {
-              "label": "Blank Page",
-              "path": "/blankpage",
-              "icon": "fa-file"
-            }
+            },
+            {
+            "label": "KPI",
+            "path": "/dashboards",
+            "icon": "fa-bar-chart"
+          }
+
             //Uncomment this block to show the Simple Asset navigation item on the menu.
             /* // asset-nav-item
             ,{

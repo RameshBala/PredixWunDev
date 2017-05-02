@@ -1,151 +1,45 @@
 {
   "id": 1,
   "data": [{
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-compressionratio",
-    "units": "psi",
-    "Current Reading": "0.88"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-dischargepressure",
-    "units": "psi",
-    "Current Reading": "2.605"
-  }, {
-    "Last Occurence": "2014-02-17, 19:33:51",
-    "Asset Path": "/Unit1/HRSG",
-    "point": "39VS11",
-    "meter": "crank-frame-suctionpressure",
-    "units": "m/s",
-    "Current Reading": "18.331"
-  }]
+    "Date Entered":"2017-04-18, 08:00:01",
+    "FC/XR":"FC",
+    "Problem":"Missing Part",
+    "Actions":"actions",
+    "Responsible":"Person 1",
+    "End Date":"2017-04-19, 08:00:00",
+    "Status":"In-Progress"},
+
+    {
+      "Date Entered":"2017-04-19, 08:00:01",
+      "FC/XR":"XR",
+      "Problem":"Tube problem 1",
+      "Actions":"actions 1",
+      "Responsible":"Person 2",
+      "End Date":"2017-04-20, 08:00:00",
+      "Status":"Completed"},
+      {
+        "Date Entered":"2017-04-03, 08:00:01",
+        "FC/XR":"FC",
+        "Problem":"Network problem",
+        "Actions":"actions 3",
+        "Responsible":"Person 3",
+        "End Date":"2017-04-20, 08:00:00",
+        "Status":"Started"},
+        {
+          "Date Entered":"2017-04-30, 08:00:01",
+          "FC/XR":"XR",
+          "Problem":"Rework",
+          "Actions":"actions 1",
+          "Responsible":"Person 4",
+          "End Date":"2017-04-20, 08:00:00",
+          "Status":"WIP"},
+          {
+            "Date Entered":"2017-04-19, 08:00:01",
+            "FC/XR":"XR",
+            "Problem":"Missing Part",
+            "Actions":"actions 2",
+            "Responsible":"Person 1",
+            "End Date":"2017-04-20, 08:00:00",
+            "Status":"Completed"}
+]
 }

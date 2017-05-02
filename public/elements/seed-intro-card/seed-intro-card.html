@@ -1,32 +1,95 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/px-card/px-card.html">
+<link rel="import" href="../../bower_components/px-progress-bar/px-progress-bar.html">
+<link rel="import" href="../../bower_components/paper-input/all-imports.html">
+<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-input/iron-input.html">
+
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/paper-input-container.html">
+<link rel="import" href="../../bower_components/paper-input-error.html">
+<link rel="import" href="../../bower_components/paper-input.html">
+<link rel="import" href="../../bower_components/paper-textarea.html">
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+<link href="../../bower_components/polymer/polymer.html" rel="import">
+<link href="../../bower_components/px-widget-cards/px-fourup.html" rel="import">
+<link rel="import" href="../../bower_components/px-theme/px-theme-styles.html">
+<style include="../../bower_components/px-theme-styles" is="custom-style"></style>
+<link href="../../bower_components/px-twoup/px-twoup.html" rel="import">
+<link href="public/elements/data-table-card/data-table-card.html" rel="import">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css" />
 
 <link rel="import" href="seed-intro-card-styles.html">
 
 <dom-module id="seed-intro-card">
-
   <template>
+  <px-card>
     <style include="seed-intro-card-styles"></style>
-    <px-card header-text="Predix UI Seed" icon="fa-suitcase">
-      <p>
-        Use the Predix UI Seed app to develop your own industrial internet application.
-      </p>
-      <h5 class="epsilon">
-        Documentation
-      </h5>
-      <p>
-        For documentation on the seed app, go to <a class="actionable" href="https://www.predix.io/docs#Je2y7sCv" target="_blank"> https://www.predix.io/docs#Je2y7sCv </a>
-      </p>
-      <h5 class="epsilon">Customizing the Seed App</h5>
-      <p>Check out the <a class="actionable" href="https://predixdev.github.io/predix-ui/" target="_blank">Predix UI component catalog</a>
-        for a list of UI components you can plug in to this application.</p>
-    </px-card>
-  </template>
+    <px-fourup id="widget-4" widget-header="System Production" widget-icon="fa-camera-retro">
+        <div class='widget-1'><span>
+         <div class="form-group">
+         <paper-input-container>
+             <label> Serial Number</label>
+             <input is ="iron-input" id="serialNo" class="form-control" value="007"></input>
+         </paper-input-container></div>
 
-  <script>
+         <div class="form-group">
+         <paper-input-container>
+             <label> Customer</label>
+             <input is ="iron-input" id="custName" class="form-control">
+             </input>
+         </paper-input-container></div>
+
+         <paper-input-container>
+             <label> System Type</label>
+             <input is ="iron-input" id="sysTyp" class="form-control">
+
+             </input>
+         </paper-input-container>
+         <paper-input-container>
+             <label> Work center</label>
+             <input is ="iron-input" id="workCent" class="form-control">
+             </input>
+         </paper-input-container>
+       </span>
+       </div>
+
+       <div class='widget-2'><span>
+         <paper-input id="fcStart"label="FC Start" type="date"></paper-input>
+         <paper-input id="fcEnd"label="FC End" type="date"></paper-input>
+         <paper-input id="xrStart"label="XR Start" type="date"></paper-input>
+         <paper-input id="xrEnd"label="XR End" type="date"></paper-input></span>
+       </div>
+       <div class='widget-3'>
+         <paper-input id="issue" label="Issue" type="text"></paper-input>
+         <paper-input id="issueType" label="Issue Type" type="text"></paper-input>
+         <paper-input id="respPerson"label="Responsible person" type="text"></paper-input>
+
+       </div>
+       <div class='widget-4'><span>
+         <p class="epsilon">Production Progress</p>
+         <px-progress-bar  value="50" striped="true" animated="true"></px-progress-bar><br>
+         <div id="Container" class="boxContainer flex flex--row flex--center flex--bottom">
+           <div id="EHS" class="childEhs flex__item flex__item--top">EHS</div>
+           <div id="Quality" class="childQuality flex__item flex__item--middle">Quality</div>
+           <div id="OTD" class="childOtd flex__item flex__item--bottom">OTD</div></span>
+       </div>
+       </div>
+      </px-fourup>
+ </px-card>
+ </template>
+ <script>
     Polymer({
-      is: 'seed-intro-card'
+      is: 'seed-intro-card',
     });
   </script>
-
 </dom-module>

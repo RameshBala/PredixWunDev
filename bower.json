@@ -37,7 +37,8 @@
     "px-theme": "^2.0.1",
     "px-vis-timeseries": "^0.6.2",
     "px-vis-xy-chart": "^0.3.0",
-    "px-view-header": "^0.2.0"
+    "px-view-header": "^0.2.0",
+    "px-flexbox-design": "^0.5.2"
   },
   "devDependencies": {
     "px-forms-design": "^1.1.1",
@@ -58,6 +59,17 @@
     "px-headings-design": "^0.3.1",
     "px-buttons-design": "^1.1.2",
     "px-actionable-text-icons-design": "^1.1.1",
-    "px-spacing-design": "^0.4.1"
+    "px-spacing-design": "^0.4.1",
+    "paper-input": "^1.1.23",
+    "iron-demo-helpers": "^1.2.5",
+    "iron-icons": "^1.2.0",
+    "iron-icon": "^1.0.12",
+    "iron-input": "^1.0.10",
+    "paper-icon-button": "^1.1.4",
+    "paper-styles": "^1.2.1",
+    "px-widget-cards": "^2.3.1",
+    "px-progress-bar": "^0.2.5",
+    "paper-button": "^1.0.14",
+    "paper-listbox": "^1.1.2"
   }
 }

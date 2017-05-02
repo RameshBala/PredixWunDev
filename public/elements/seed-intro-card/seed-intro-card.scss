@@ -5,14 +5,113 @@
 @import "px-normalize-design/_generic.normalize.scss";
 @import "px-box-sizing-design/_generic.box-sizing.scss";
 @import "px-helpers-design/_generic.helpers.scss";
+@import "px-code-design/_base.code.scss";
 
 // Base
 @import "px-flexbox-design/_base.flexbox.scss";
 @import "px-viewport-design/_base.viewport.scss";
 @import "px-headings-design/_base.headings.scss";
+@import "px-list-bare-design/_objects.list-bare.scss";
+
 
 // Objects
 @import 'px-actionable-text-icons-design/_objects.actionable.scss';
+.container {
+  background-color: gainsboro;
+  margin-top: .5em;
+  margin-bottom: 10em;
+
+}
+.button {
+    margin: 5 auto;
+    align-items: auto;
+    align-self: auto;
+    align-content: center;
+}
+
+
+.childEhs
+{
+  background-color: teal;
+  font-size: 100%;
+  font-family: GE Inspira Sans;
+
+  color: white;
+  padding: 2em;
+  margin: 1em;
+  width: 130px;
+  text-align: center;
+  font-size: 110%;
+
+}
+.childQuality {
+  background-color: teal;
+  font-size: 100%;
+  font-family: GE Inspira Sans;
+
+  color: white;
+  padding: 2em;
+  margin: 1em;
+  width: 130px;
+  text-align: center;
+  font-size: 110%;
+
+}
+.childOtd {
+  background-color: teal;
+  font-size: 100%;
+  font-family: GE Inspira Sans;
+
+  color: white;
+  padding: 2em;
+  margin: 1em;
+  width: 130px;
+  text-align: center;
+  font-size: 110%;
+
+
+}
+    paper-button.custom {
+      --paper-button-ink-color: var(--paper-pink-a200);
+      /* These could also be individually defined for each of the
+        specific css classes, but we'll just do it once as an example */
+      --paper-button-flat-keyboard-focus: {
+        background-color: var(--paper-pink-a200);
+        color: white !important;
+      };
+      --paper-button-raised-keyboard-focus: {
+        background-color: var(--paper-pink-a200) !important;
+        color: white !important;
+      };
+    }
+    paper-button.custom:hover {
+      background-color: var(--paper-indigo-100);
+    }
+    paper-button.pink {
+      color: var(--paper-pink-a200);
+
+    }
+    paper-button.indigo {
+      background-color: var(--paper-indigo-500);
+      color: white;
+      --paper-button-raised-keyboard-focus: {
+        background-color: var(--paper-pink-a200) !important;
+        color: white !important;
+      };
+    }
+    paper-button.green {
+      background-color: var(--paper-green-500);
+      color: white;
+    }
+    paper-button.green[active] {
+      background-color: var(--paper-red-500);
+    }
+    paper-button.disabled {
+      color: white;
+
+
+}
+
 
 // Component
 // Trumps
