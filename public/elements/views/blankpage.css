@@ -13,6 +13,35 @@ background-color: green;
 .yellow {
   background-color: yellow;
 }
+
+.div {
+  border: 2px solid;
+  background-color: white;
+}
+.justi {
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+
+}
+
+.paper-spinner{
+  width: 200px;
+   height: 200px;
+
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  }
 .sphere {
   height: 50px;
   width: 50px;
@@ -82,6 +111,57 @@ font-size: 0.75vw;
 	position: relative;
   background-color: white;
   border-radius: 20px;
+
+}
+
+.kpi-container {
+	display: flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	justify-content:flex-start;
+	list-style: none;
+	margin: 2,5px;
+	padding: 5px;
+	-webkit-flex-flow: row wrap;
+	position: static;
+  background-color: white;
+  border-radius: 5px;
+  column-width: 25px;
+  justify-content: center;
+  align-content: center;
+
+}
+.button{
+  font-weight: bolder;
+  margin: 0 auto;
+  position:relative;
+  display: inline-block;
+  align-self: center;
+
+
+    padding: 10px;
+  text-align: center;
+}
+.kpi-container {
+	display: flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	justify-content:flex-start;
+	list-style: none;
+	margin: 2,5px;
+	padding: 5px;
+	-webkit-flex-flow: row wrap;
+	position: static;
+  background-color: white;
+  border-radius: 5px;
+  column-width: 25px;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 .flex-item {
 	color: #fff;
@@ -103,6 +183,10 @@ font-size: 0.75vw;
 	margin: 20px;
 	padding: 0;
 	width: 100%;
+}
+
+.divclass {
+  justify-content: center;
 }
 .flex-item-inner a {
 	color: #fff;

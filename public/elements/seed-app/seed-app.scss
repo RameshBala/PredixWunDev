@@ -104,6 +104,13 @@ main {
   }
 }
 
+// For KPI view
+@import 'px-layout-design/_objects.layout.scss';
+$inuit-enable-layout--large : true;
+$inuit-enable-layout--rev : true;
+$inuit-enable-layout--middle : true;
+$inuit-enable-layout--center : true;
+
 // Trumps
 $inuit-enable-margins--tiny             : true;
 $inuit-enable-margins--small            : true;

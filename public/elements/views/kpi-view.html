@@ -1,10 +1,117 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<link rel="import" href="../../bower_components/px-data-table/px-data-table.html" />
+<link rel="import" href="../../bower_components/flip-card/flip-card.html">
+<link rel="import" href="../../bower_components/px-simple-horizontal-bar-chart/px-simple-horizontal-bar-chart.html">
+<link rel="import" href="../../bower_components/px-percent-circle/px-percent-circle.html">
+<link rel="import" href="../../bower_components/px-widget-cards/px-twoup.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="stylesheet" type="text/css" href="blankpage.css">
+<link rel="stylesheet" type="text/css" href="circle.css">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 
-  </body>
-</html>
+
+<dom-module id="kpi-view">
+  <template>
+    <div class="kpi-container">
+
+    <div>
+    <px-data-table table-data='[{"prod center":"Prod_01","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_01","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_02","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_03","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_04","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_0vbnvbnvbnvbnv5","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
+      {"prod center":"Prod_01","work orders":"W.Order 2","otd-jobs":"40"},
+      {"prod center":"Prod_01","work orders":"W.Order 3","otd-jobs":"40"},
+      {"prod center":"Prod_03","work orders":"W.Order 4","otd-jobs":"40"}]'
+      language="en" striped="false"  filterable="true"sortable="true" selectable="false" single-select="true" table-rows="true" include-all-columns="true">
+      <px-data-table-column name='prod center'></px-data-table-column>
+      <px-data-table-column name='work orders'></px-data-table-column>
+      <px-data-table-column name='otd-jobs'></px-data-table-column>
+    </px-data-table>
+  </div>
+
+    <div>
+      <px-twoup id="widget-2" widget-header="Prod Center Level Job OTD" widget-icon="fa-paper-plane">
+        <div class='widget-1'><span>
+          <px-simple-horizontal-bar-chart
+            width="550"
+            height="200"
+            bar-labels="percentage"
+            legend-labels='["Open Jobs","Target","Closed Jobs"]'
+            chart-data='[2,8,5]'>
+            </px-simple-horizontal-bar-chart></span>
+          </div>
+
+          <div class='widget-2'><span>
+            <div class="c100 p25">
+            <span>Sys1 25%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+
+          <div class="c100 p25">
+            <span>Sys2 50%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+
+          <div class="c100 p25">
+            <span>Sys3 30%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+
+          <div class="c100 p25">
+            <span  class="">Sys4 60%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+
+            </div>
+          </div>
+
+          <div class="c100 p25">
+            <span>Sys5 80%  </span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+        </span>
+        </div>
+      </px-twoup>
+      </div>
+      <div id="kpiViewDiv"class="horizontal justi">
+          <span><paper-button raised class="custom green button">DOC</paper-button>
+          <paper-button raised class="custom green button">EHS</paper-button>
+          <paper-button raised class="custom green button">QUALITY</paper-button>
+          <paper-button raised class="custom green button">SHIPPING</paper-button>
+          <paper-button raised class="custom green button">E-MAIL</paper-button></span>
+          <span><paper-button raised class="custom red button">STOP THE LINE</paper-button></span>
+        </div>
+    </div>
+
+
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'kpi-view',
+
+    properties: {
+      customer1: String,
+      data: Object
+    },
+  });
+</script>

@@ -6,9 +6,9 @@
 <link rel="import" href="../../bower_components/flip-card/flip-card.html">
 <link rel="import" href="../../bower_components/px-progress-bar/px-progress-bar.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="../../bower_components/px-spinner/px-spinner.html">
+<link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
 
-<dom-module id="blankpage-view">
+<dom-module id="plant-level-view">
   <template>
 
     <iron-ajax
@@ -17,7 +17,9 @@
     handle-as="json"
     on-response="handleResponse"
     debounce-duration="300"
+    loading="{{loading}}"
     last-response="{{data}}">
+
     </iron-ajax>
 
     <px-view-header title="PCC" style="display: block; margin-bottom: 6px;"></px-view-header>
@@ -372,21 +374,26 @@
                 </div>
               </div>
             </div>
-
           </div>
-
-    
+          <div class="overlay" hidden$="[[!loading]]">
+            <paper-spinner active="[[loading]]" class="paper-spinner"></paper-spinner>
+          </div>
   </template>
 
 </dom-module>
 <script>
   Polymer({
-    is: 'blankpage-view',
+    is: 'plant-level-view',
 
     properties: {
         customer1: String,
         data: Object
+      },
 
+      loading:{
+        type:Boolean,
+        value: false,
+        notify: true
       },
 
     handleResponse: function(){

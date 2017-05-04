@@ -57,24 +57,74 @@
           <app-route
             route="[[_route]]"
             pattern="/blankpage"
-            active="{{_blankpageActive}}">
+            active="{{_plantLevelActive}}">
           </app-route>
           <px-view
-            active="[[_blankpageActive]]"
-            element-href="/elements/views/blankpage-view.html">
+            active="[[_plantLevelActive]]"
+            element-href="/elements/views/plant-level-view.html">
           </px-view>
 
-          <!-- /dashboards route and view -->
+          <!-- /alert-view route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/alert-view"
+            active="{{_alertActive}}">
+          </app-route>
+
+          <px-view
+            active="[[_alertActive]]"
+            element-href="/elements/views/alert-view.html">
+          </px-view>
+
+
+          <!-- /cell level route and view -->
           <app-route
             route="[[_route]]"
             pattern="/dashboards"
-            active="{{_dashboardsActive}}">
+            active="{{_cellLevelActive}}">
           </app-route>
 
           <px-view
-            active="[[_dashboardsActive]]"
+            active="[[_cellLevelActive]]"
             element-href="/elements/views/dashboards-view.html">
           </px-view>
+
+          <!-- /kpi-view route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/kpi-view"
+            active="{{_kpiViewActive}}">
+          </app-route>
+
+          <px-view
+            active="[[_kpiViewActive]]"
+            element-href="/elements/views/kpi-view.html">
+          </px-view>
+
+          <!-- /warehouse route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/kpi-view"
+            active="{{_warehouseActive}}">
+          </app-route>
+
+          <px-view
+            active="[[_warehouseActive]]"
+            element-href="/elements/views/warehouse-view.html">
+          </px-view>
+
+          <!-- /kpi route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/kpi"
+            active="{{_kpiActive}}">
+          </app-route>
+
+          <px-view
+            active="[[_kpiActive]]"
+            element-href="/elements/views/kpi.html">
+          </px-view>
+
 
 
 
@@ -136,21 +186,38 @@
           value: function() {
             return [
               {
-                "label": "Overview",
+                "label": "Plant Level",
                 "path": "/blankpage",
                 "icon": "fa-desktop"
               },
+              {
+                "label": "Alert",
+                "path": "/alert-view",
+                "icon": "fa-exclamation-triangle"
+              },
+
 
               {
-              "label": "Dashboards",
+              "label": "Cell Level",
               "path": "/dashboards",
               "icon": "fa-tachometer"
             },
+
             {
-            "label": "KPI",
-            "path": "/dashboards",
+            "label": "Prod Center level",
+            "path": "/kpi-view",
             "icon": "fa-bar-chart"
-          }
+          },
+          {
+          "label": "Warehouse",
+          "path": "/warehouse",
+          "icon": "fa-tachometer"
+        },
+        {
+        "label": "KPI",
+        "path": "/kpi",
+        "icon": "fa-tachometer"
+      },
 
             //Uncomment this block to show the Simple Asset navigation item on the menu.
             /* // asset-nav-item

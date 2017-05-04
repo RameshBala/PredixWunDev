@@ -10,9 +10,12 @@ module.exports = function(gulp) {
   return function () {
     return gulp.src([
       'public/elements/seed-app/seed-app.html',
-      'public/elements/views/dashboards-view.html',
-      'public/elements/views/blankpage-view.html',
-        'public/elements/views/kpi-view.html'
+      'public/elements/views/cell-level-view.html',
+      'public/elements/views/plant-level-view.html',
+      'public/elements/views/kpi-view.html',
+      'public/elements/views/alert-view.html'
+
+
       ], { base: 'public/elements/' })
       .pipe(vulcanize({
         abspath: '',

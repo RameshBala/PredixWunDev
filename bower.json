@@ -25,7 +25,7 @@
     "app-route": "PolymerElements/app-route#^0.9.1",
     "px-overlay": "^0.4.0",
     "px-simple-line-chart": "^1.7.0",
-    "px-simple-horizontal-bar-chart": "^0.8.0",
+    "px-simple-horizontal-bar-chart": "^0.8.5",
     "px-widget-cards": "^2.2.1",
     "px-simple-bar-chart": "^1.7.1",
     "px": "^1.4.3",
@@ -38,7 +38,10 @@
     "px-vis-timeseries": "^0.6.2",
     "px-vis-xy-chart": "^0.3.0",
     "px-view-header": "^0.2.0",
-    "px-flexbox-design": "^0.5.2"
+    "px-flexbox-design": "^0.5.2",
+    "vaadin-grid": "^2.0.1",
+    "px-percent-circle": "^0.2.3",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.7"
   },
   "devDependencies": {
     "px-forms-design": "^1.1.1",
@@ -70,6 +73,7 @@
     "px-widget-cards": "^2.3.1",
     "px-progress-bar": "^0.2.5",
     "paper-button": "^1.0.14",
-    "paper-listbox": "^1.1.2"
+    "paper-listbox": "^1.1.2",
+    "paper-spinner": "^1.2.1"
   }
 }
