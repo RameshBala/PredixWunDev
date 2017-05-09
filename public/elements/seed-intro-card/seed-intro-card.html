@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="style.css" />
 
 <link rel="import" href="seed-intro-card-styles.html">
+<link rel="stylesheet" type="text/css" href="blankpage.css">
 
 <dom-module id="seed-intro-card">
   <template>
@@ -86,10 +87,81 @@
        </div>
       </px-fourup>
  </px-card>
+ <px-card header-text="[[_headerText]]">
+   <iron-ajax
+     id="dataTableDataIronAjax"
+     url="[[_ajaxURL]]"
+     last-response="{{_ajaxData}}"
+     auto>
+   </iron-ajax>
+   <px-data-table
+     filterable
+     selectable
+     table-data="{{_dataTableData}}">
+   </px-data-table>
+ </px-card>
+ <px-card>
+ <style include="seed-intro-card-styles"></style>
+
+ <div class="col-md-1 flex-container horizontal justi">
+   <paper-button raised class="green">Save</paper-button>
+   <paper-button raised class="green">Update</paper-button>
+   <paper-button  raised class="green">E-mail Status</paper-button>
+   <paper-button raised class="green ">disabled</paper-button>
+ </div>
+
+ </px-card>
+
  </template>
  <script>
     Polymer({
       is: 'seed-intro-card',
+
+      properties: {
+        elementData: {
+          type: Object,
+          value: function() { return { 'empty': true }; }
+        },
+        _ajaxURL: {
+          type: String,
+          computed: '_computeAjaxURL(elementData)'
+        },
+        _ajaxData: {
+          type: Object
+        },
+        _dataTableData: {
+          type: Object,
+          computed: '_computeDataTableData(_ajaxData)'
+        },
+        _headerText: {
+          type: String,
+          computed: '_computeHeaderString(elementData)'
+        }
+      },
+
+      _computeDataTableData: function(){
+        return this._ajaxData['data'];
+      },
+
+      _dataValueExists: function(data, value) {
+        return (data !== { 'empty': true } &&
+                typeof data.attributes !== 'undefined' &&
+                typeof data.attributes[value] !== 'undefined')
+      },
+
+      _computeAjaxURL: function() {
+        if (this._dataValueExists(this.elementData, 'dataUrl')){
+          return this.elementData.attributes.dataUrl;
+        }
+      },
+
+      _computeHeaderString: function() {
+        if (this._dataValueExists(this.elementData, 'headerText')){
+          return this.elementData.attributes.headerText;
+        } else {
+          return 'Datagrid'
+        }
+      }
     });
   </script>
 </dom-module>

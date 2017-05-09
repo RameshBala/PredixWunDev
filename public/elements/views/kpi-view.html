@@ -7,31 +7,62 @@
 <link rel="stylesheet" type="text/css" href="blankpage.css">
 <link rel="stylesheet" type="text/css" href="circle.css">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/px-theme/px-theme-styles.html">
+<link rel="import" href="../../bower_components/google-chart/google-chart.html">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Week', 'Jobs with missing parts'],
+          ['14',  30],
+          ['15',  10],
+          ['16',  30],
+          ['17',  10],
+          ['18',  15],
+          ['19',  16],
+          ['20',  14],
+          ['21',  17],
+          ['22',  19]
+        ]);
 
+        var options = {
+          title: 'Mising Part Overview',
+          // hAxis: { maxValue: 7 },
+          // vAxis: { maxValue: 13 },
+          curveType: 'function',
+          lineWidth: 2.5,
+          legend: { position: 'bottom' },
+          colors: ['red'],
+          pointSize: 10,
+          pointShape: { type: 'circle', rotation: 180,  }
+
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 <dom-module id="kpi-view">
   <template>
     <div class="kpi-container">
-
     <div>
-    <px-data-table table-data='[{"prod center":"Prod_01","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_01","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_02","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_03","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_04","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_0vbnvbnvbnvbnv5","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_05","work orders":"W.Order 1","otd-jobs":"40"},
-      {"prod center":"Prod_01","work orders":"W.Order 2","otd-jobs":"40"},
-      {"prod center":"Prod_01","work orders":"W.Order 3","otd-jobs":"40"},
-      {"prod center":"Prod_03","work orders":"W.Order 4","otd-jobs":"40"}]'
-      language="en" striped="false"  filterable="true"sortable="true" selectable="false" single-select="true" table-rows="true" include-all-columns="true">
-      <px-data-table-column name='prod center'></px-data-table-column>
-      <px-data-table-column name='work orders'></px-data-table-column>
-      <px-data-table-column name='otd-jobs'></px-data-table-column>
+    <px-data-table table-data='[{"Prod center":"Prod_01","Work Orders":"W.Order 1","Total jobs":"40", "Jobs OTD":"80%", "Jobs WIP":"35", "Jobs with Missing Part":"6", "Jobs with Late Delivery":"2"},
+                                {"Prod center":"Prod_01","Work Orders":"W.Order 1","Total jobs":"40", "Jobs OTD":"80%", "Jobs WIP":"35", "Jobs with Missing Part":"6", "Jobs with Late Delivery":"2"},
+                                {"Prod center":"Prod_01","Work Orders":"W.Order 1","Total jobs":"40", "Jobs OTD":"80%", "Jobs WIP":"35", "Jobs with Missing Part":"6", "Jobs with Late Delivery":"2"},
+                                {"Prod center":"Prod_01","Work Orders":"W.Order 1","Total jobs":"40", "Jobs OTD":"80%", "Jobs WIP":"35", "Jobs with Missing Part":"6", "Jobs with Late Delivery":"2"},
+                                {"Prod center":"Prod_01","Work Orders":"W.Order 1","Total jobs":"40", "Jobs OTD":"80%", "Jobs WIP":"35", "Jobs with Missing Part":"6", "Jobs with Late Delivery":"2"}]'
+      language="en" striped="true" filterable="true" sortable="true"  single-select="true" show-column-chooser="true" include-all-columns="true">
+      <px-data-table-column name='Prod center'></px-data-table-column>
+      <px-data-table-column name='Work Orders'></px-data-table-column>
+      <px-data-table-column name='Total jobs'></px-data-table-column>
+      <px-data-table-column name='Jobs OTD'></px-data-table-column>
+      <px-data-table-column name='Jobs WIP'></px-data-table-column>
+      <px-data-table-column name='Jobs with Missing Part'></px-data-table-column>
+      <px-data-table-column name='Jobs with Late Delivery' onclick=""></px-data-table-column>
     </px-data-table>
   </div>
 
@@ -47,60 +78,27 @@
             </px-simple-horizontal-bar-chart></span>
           </div>
 
-          <div class='widget-2'><span>
-            <div class="c100 p25">
-            <span>Sys1 25%</span>
-            <div class="slice">
-              <div class="bar"></div>
-              <div class="fill"></div>
-            </div>
-          </div>
+          <div class='widget-2'>
+            <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
-          <div class="c100 p25">
-            <span>Sys2 50%</span>
-            <div class="slice">
-              <div class="bar"></div>
-              <div class="fill"></div>
-            </div>
-          </div>
 
-          <div class="c100 p25">
-            <span>Sys3 30%</span>
-            <div class="slice">
-              <div class="bar"></div>
-              <div class="fill"></div>
-            </div>
-          </div>
 
-          <div class="c100 p25">
-            <span  class="">Sys4 60%</span>
-            <div class="slice">
-              <div class="bar"></div>
-              <div class="fill"></div>
 
             </div>
-          </div>
-
-          <div class="c100 p25">
-            <span>Sys5 80%  </span>
-            <div class="slice">
-              <div class="bar"></div>
-              <div class="fill"></div>
-            </div>
-          </div>
-        </span>
-        </div>
       </px-twoup>
       </div>
-      <div id="kpiViewDiv"class="horizontal justi">
-          <span><paper-button raised class="custom green button">DOC</paper-button>
-          <paper-button raised class="custom green button">EHS</paper-button>
-          <paper-button raised class="custom green button">QUALITY</paper-button>
-          <paper-button raised class="custom green button">SHIPPING</paper-button>
-          <paper-button raised class="custom green button">E-MAIL</paper-button></span>
-          <span><paper-button raised class="custom red button">STOP THE LINE</paper-button></span>
+</div>
+      <div id="kpiViewDiv"class="col-md-1 flex-container horizontal justi">
+
+          <div class="flex-item1"><paper-button raised class="green">DOC</paper-button></div>
+          <div class="flex-item1"><paper-button raised class="green">EHS</paper-button></div>
+          <div class="flex-item1"><paper-button raised class="green">OTD</paper-button></div>
+          <div class="flex-item1"><paper-button raised class="green">QUALITY</paper-button></div>
+          <div class="flex-item1"><paper-button raised class="green">SHIPPING</paper-button></div>
+          <div class="flex-item1"><paper-button raised class="green">E-MAIL</paper-button></div>
+          <div class="flex-item1"><paper-button raised class="red">STOP THE LINE</paper-button></div>
         </div>
-    </div>
+
 
 
   </template>
@@ -109,9 +107,11 @@
   Polymer({
     is: 'kpi-view',
 
+
+
     properties: {
       customer1: String,
-      data: Object
-    },
-  });
+      data: Object,
+        }
+      });
 </script>
